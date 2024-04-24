@@ -1,0 +1,37 @@
+.navigationbar {
+    position: absolute;
+    padding: 1em 0;
+    width: 100vw;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ffffff30;
+    background: none;
+    transition: 0.5s;
+    z-index: 50;
+
+    nav {
+        display: flex;
+        gap: 2rem;
+        font-size: 14px;
+        font-weight: 700;
+        
+        a {
+            color: #ffffff;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.5s
+        }
+    }
+
+    &:hover {
+        background: #ffffff;
+        nav {
+            a {
+                color: #000000;
+            }
+        }
+    }
+}
