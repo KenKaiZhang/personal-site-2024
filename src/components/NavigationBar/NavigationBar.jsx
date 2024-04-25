@@ -8,6 +8,7 @@ const NavigationBar = () => {
             </div>
             <nav>
                 <a href="/">HOME</a>
+                <a href="/">ABOUT</a>
                 <a href="/">EXPERIENCES</a>
             </nav>
         </div>

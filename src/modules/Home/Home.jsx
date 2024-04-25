@@ -1,10 +1,13 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useState, useMemo } from "react"
 import styles from "./Home.module.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 const Home = () => {
 
     const [index, setIndex] = useState(0)
+    const [exit, setExit] = useState(false)
     const contents = useMemo(() => 
         [
             {
@@ -22,15 +25,38 @@ const Home = () => {
 
     const {title, subtitle, background} = useMemo(() => contents[index], [contents, index])
     
-    const handleDotClick = (e) => setIndex(Number(e.target.id))
-
+    const handleDotClick = (e) =>{ 
+        setExit(true);
+        setTimeout(() => {
+            setIndex(Number(e.target.id))
+            setExit(false)
+        }, 1000)
+    }
     return (
         <React.Fragment>
-            <div className={styles.intro} style={{ backgroundImage: `url(${background})`}}>
+            <div 
+                key={index} 
+                className={`
+                    ${styles.intro}
+                    ${!exit ? styles.introZoomIn : ""}
+                `} 
+                style={{ backgroundImage: `url(${background})`}}
+            >
                 <div className={styles.introContent}>
-                    <div className={styles.introText}>
+                    <div 
+
+                        className={`
+                            ${styles.introText} 
+                            ${exit
+                                ? styles.introTextExit
+                                : styles.introTextEnter
+                            }
+                        `}>
                         <h4>{title}</h4>
-                        <h2>{subtitle}</h2>
+                        <span>
+                            <h2>{subtitle}</h2>
+                            <FontAwesomeIcon icon={faArrowRight} />
+                        </span>
                     </div>
                     <div className={styles.slideDot}>
                         {
