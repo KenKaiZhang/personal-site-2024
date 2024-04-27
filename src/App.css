@@ -1,8 +1,8 @@
 .App {
+    position: relative;
     * {
         margin: 0;
         padding: 0;
-        color: #ffffff;
         box-sizing: border-box;
         letter-spacing: 1px;
     }

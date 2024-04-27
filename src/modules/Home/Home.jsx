@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useState, useMemo } from "react"
 import styles from "./Home.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -36,10 +36,7 @@ const Home = () => {
         <React.Fragment>
             <div 
                 key={index} 
-                className={`
-                    ${styles.intro}
-                    ${!exit ? styles.introZoomIn : ""}
-                `} 
+                className={` ${styles.intro} ${!exit ? styles.introZoomIn : ""}`} 
                 style={{ backgroundImage: `url(${background})`}}
             >
                 <div className={styles.introContent}>

@@ -1,4 +1,4 @@
-.navigationbar {
+.navigationbarHome {
     position: absolute;
     padding: 1em 0;
     width: 100vw;
@@ -46,10 +46,70 @@
 
     &:hover {
         background: #ffffff;
-        nav {
-            a {
-                color: #000000;
+
+        nav a { color: #000000; }
+
+        .logo {
+            path {
+                stroke: #000000;
+                fill: #000000;
+            }
+            circle { stroke: #000000 }
+        }
+    }
+}
+
+.navigationbar {
+    position: absolute;
+    padding: 1em 0;
+    width: 100vw;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #00000030;
+    background: none;
+    transition: 0.5s;
+    z-index: 50;
+
+    nav {
+        display: flex;
+        gap: 2rem;
+        font-size: 14px;
+        font-weight: 700;
+        
+        a {
+            position: relative;
+            color: #000000;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.5s;
+
+            &:after {                
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: -4px;
+                width: 0;
+                height: 2px;
+                display: block;
+                background: #000000;
+                transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            }
+
+            &:hover:after {
+                width: 100%;
+                left: 0;
             }
         }
+    }
+    
+    .logo {
+        path {
+            stroke: #000000;
+            fill: #000000;
+        }
+        circle { stroke: #000000 }
     }
 }

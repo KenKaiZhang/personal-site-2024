@@ -2,7 +2,6 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: #000000;
     background-size: 100% 100%;
     background-position: center center;
 }
@@ -27,6 +26,7 @@
     opacity: 0;
     transform: translateY(50%);
     user-select: none;
+    color: #ffffff;
 
     span {
         display: flex;
