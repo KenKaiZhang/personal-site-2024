@@ -1,19 +1,14 @@
 import styles from "./About.module.scss"
 import initData from "../../data/init.json"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons"
-import { useEffect, useState } from "react"
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
+import { useState } from "react"
 import { elementInView } from "../../util/elementInView"
 
 const About = () => {
 
-    const [showInfo, setShowInfo] = useState(false)
     const [eduInView, setEduInView] = useState(false)
     const [sklInView, setSklInView] = useState(false)
-
-    useEffect(() => {
-        setTimeout(() => setShowInfo(true), 3000)
-    }, [])
 
     window.addEventListener("scroll", () => {
         if (!eduInView && elementInView(document.querySelector("#educations")))
@@ -34,12 +29,12 @@ const About = () => {
                     </button>
                     <input placeholder="Ask more about me" />
                 </div>
-                <div 
+                {/* <div 
                     className={styles.showInfoIndicator}>
                     <FontAwesomeIcon icon={faArrowDown}/>
-                </div>
+                </div> */}
             </div>
-            <div className={styles.info} style={{display: showInfo ? "flex" : "none"}}>
+            <div className={styles.info}>
                 <section 
                     id="educations" 
                     className={eduInView ? styles.showInfoSection : ""}
@@ -73,7 +68,7 @@ const About = () => {
                             <li>Fullstack Development</li>
                             <li>UI/UX Design</li>
                             <li>NodeJS</li>
-                            <li>Valorant</li>
+                            <li>Chinese (Mandarin)</li>
                         </ul>
                     </div>
                 </section>

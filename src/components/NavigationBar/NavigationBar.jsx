@@ -19,7 +19,7 @@ const NavigationBar = () => {
     const isHome = useLocation().pathname === "/"
 
     return (
-        <div className={isHome ? styles.navigationbarHome : styles.navigationbar}>
+        <div className={`${styles.navigationbar} ${isHome ? styles.home : ""} `}>
             <div className={styles.logo}>
                 <Logo />
             </div>

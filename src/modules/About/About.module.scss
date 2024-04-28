@@ -6,8 +6,10 @@
 }
 
 .intro {
+    position: relative;
+    padding: 5rem 0 3rem 0;
     max-width: 1000px;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -52,8 +54,8 @@
     button {
         position: absolute;
         z-index: 50;
-        right: 0.3rem;
-        bottom: 1.3rem;
+        right: 0.2rem;
+        bottom: 1.15rem;
         width: 35px;
         height: 35px;
         font-size: 16px;
@@ -80,8 +82,8 @@
         bottom: 1rem;
         padding: 0 1rem;
         width: 100%;
-        height: 45px;
-        font-size: 16px;
+        height: 40px;
+        font-size: 14px;
         border: 1px solid #c2c2c2;
         border-radius: 5px;
         &::placeholder {
@@ -95,7 +97,7 @@
 
 .showInfoIndicator {
     position: absolute;
-    bottom: 2rem;
+    bottom: 0rem;
     color: #b0b0b0;
     opacity: 0;
 
@@ -115,13 +117,13 @@
     }
 
     hr {
-        margin-bottom: 2rem;
+        margin: 1.5rem;
         border-top: 1px solid #e9e9e9;
     }
 
     h1 {
-        font-size: 28px;
-        font-weight: 700;
+        font-size: 24px;
+        font-weight: 500;
     }
 
     div {
@@ -135,26 +137,27 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            font-weight: 18px;
+            font-size: 16px;
 
             h3 {
-                font-weight: 700;
+                font-weight: 500;
                 i {font-weight: 300;}
             }
             h4 {font-weight: 300;}
             p {color: #9c9c9c;}
         }
         img {
-            padding: 1rem;
-            width: 20%;
+            width: 15%;
         }
         ul {
-            margin-top: 2rem;
-            margin-right: 2rem;
+            padding: 0;
+            margin-top: 1rem;
+            margin-bottom: 5rem;
             list-style: none;
             li {
-                font-size: 18px;
-                margin-bottom: 1rem;
+                font-size: 16px;
+                margin-right: 1rem;
+                margin-bottom: 0.25rem;
             }
         }
         
@@ -173,7 +176,7 @@
         opacity: 0.3;
     }
     100% {
-        width: 60%;
+        width: 65%;
         opacity: 1;
     }
 }
