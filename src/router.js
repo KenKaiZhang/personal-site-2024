@@ -1,5 +1,6 @@
 import App from "./App";
 import About from "./modules/About";
+import Experiences from "./modules/Experiences";
 import Home from "./modules/Home";
 
 export const router = [
@@ -14,6 +15,10 @@ export const router = [
             {
                 path: "/about",
                 element: <About />
+            },
+            {
+                path: "/experiences",
+                element: <Experiences />
             }
         ]
     },

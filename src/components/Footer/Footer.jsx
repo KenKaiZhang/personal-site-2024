@@ -24,8 +24,8 @@ const Footer = () => {
             </div>
             <div className={styles.connect}>
                 {
-                    links.map(({href, icon}) => (
-                        <a href={href} target="_blank" rel="noreferrer">
+                    links.map(({href, icon}, i) => (
+                        <a key={i} href={href} target="_blank" rel="noreferrer">
                             <FontAwesomeIcon icon={icon}/>
                         </a>
                     ))

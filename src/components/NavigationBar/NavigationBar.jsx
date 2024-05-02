@@ -26,7 +26,7 @@ const NavigationBar = () => {
             <nav>
                 <a href="/" >HOME</a>
                 <a href="/about" >ABOUT</a>
-                <a href="/" >EXPERIENCES</a>
+                <a href="/experiences" >EXPERIENCES</a>
             </nav>
         </div>
     )
