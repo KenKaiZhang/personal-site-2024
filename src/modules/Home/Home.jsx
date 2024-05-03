@@ -32,6 +32,7 @@ const Home = () => {
             setExit(false)
         }, 1000)
     }
+    
     return (
         <React.Fragment>
             <div 

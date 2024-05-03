@@ -2,7 +2,7 @@ import styles from "./About.module.scss"
 import initData from "../../data/init.json"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { elementInView } from "../../util/elementInView"
 
 const About = () => {
@@ -10,13 +10,18 @@ const About = () => {
     const [eduInView, setEduInView] = useState(false)
     const [sklInView, setSklInView] = useState(false)
 
-    window.addEventListener("scroll", () => {
-        if (!eduInView && elementInView(document.querySelector("#educations")))
-            setEduInView(true)
+    useEffect(() => {
+        const onScroll = () => {
+            if (!eduInView && elementInView(document.querySelector("#educations")))
+                setEduInView(true)
 
-        if (!sklInView && elementInView(document.querySelector("#skills")))
-            setSklInView(true)
-    })
+            if (!sklInView && elementInView(document.querySelector("#skills")))
+                setSklInView(true)
+        }
+        window.addEventListener("scroll", onScroll)
+
+        return () => window.removeEventListener("scroll", onScroll)
+    }, [])
 
     return (
         <div className={styles.about}>

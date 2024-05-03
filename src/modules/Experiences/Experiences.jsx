@@ -1,9 +1,9 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { getScrollPercent } from "../../util/getScrollPercent";
 import styles from "./Experiences.module.scss"
 
 const Experiences = () => {
-
+    console.log("HEEH")
     const monthToNumber = useMemo(() => (
         {
             "Jan": 1,
@@ -68,15 +68,19 @@ const Experiences = () => {
         }
     }
 
-    window.addEventListener("scroll", () => {
-        const { height: timelineHeight } = document.querySelector("#timeline").getBoundingClientRect();
-        const line = document.querySelector("#line");
-        const scrollPercent = getScrollPercent(document.querySelector("body"))
-        line.style.height = `${(timelineHeight * scrollPercent) + 10}px`
-        colorYear("2024", scrollPercent, 0.33)
-        colorYear("2023", scrollPercent, 0.66)
-        colorYear("2022", scrollPercent, 0.98)
-    })
+    useEffect(() => {
+        const onScroll = () =>  {
+            const { height: timelineHeight } = document.querySelector("#timeline").getBoundingClientRect();
+            const line = document.querySelector("#line");
+            const scrollPercent = getScrollPercent(document.querySelector("body"))
+            line.style.height = `${(timelineHeight * scrollPercent) + 10}px`
+            colorYear("2024", scrollPercent, 0.33)
+            colorYear("2023", scrollPercent, 0.66)
+            colorYear("2022", scrollPercent, 0.98)
+        }
+        window.addEventListener("scroll", onScroll)
+        return () => window.removeEventListener("scroll", onScroll)
+    }, [])
 
     return (
         <div className={styles.experiences}>

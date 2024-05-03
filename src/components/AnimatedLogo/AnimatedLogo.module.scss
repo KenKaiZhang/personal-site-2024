@@ -1,0 +1,33 @@
+.animatedLogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: white;
+
+    svg {
+        width: 125px;
+        height: 125px;
+    }
+}
+
+.hideLogo {
+    animation: fadeOut;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}

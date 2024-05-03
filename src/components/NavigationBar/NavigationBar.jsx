@@ -1,20 +1,8 @@
 import styles from "./NavigationBar.module.scss"
 import Logo from "../Logo/Logo.jsx"
-import { useLocation } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 const NavigationBar = () => {
-
-    // const [play, setPlay] = useState(false);
-
-
-    // const delayNavigate = (e) => {
-    //     e.preventDefault();
-    //     setPlay(true)
-    //     setTimeout(() => {
-    //         window.location.href = e.target.href
-    //         setPlay(false)
-    //     }, 500)
-    // }
 
     const isHome = useLocation().pathname === "/"
 
@@ -24,9 +12,9 @@ const NavigationBar = () => {
                 <Logo />
             </div>
             <nav>
-                <a href="/" >HOME</a>
-                <a href="/about" >ABOUT</a>
-                <a href="/experiences" >EXPERIENCES</a>
+                <Link to="/" >HOME</Link>
+                <Link to="/about" >ABOUT</Link>
+                <Link to="/experiences" >EXPERIENCES</Link>
             </nav>
         </div>
     )
